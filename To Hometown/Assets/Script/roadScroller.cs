@@ -5,16 +5,16 @@ using UnityEngine;
 
 public class roadScroller : MonoBehaviour
 {
-    [SerializeField]
-    private float roadSpeed = 10;
-    
+    public PlayerMovement player;
+
+
     void FixedUpdate()
     {
-        transform.position += new Vector3(-roadSpeed * Time.fixedDeltaTime, 0);
+        transform.position += new Vector3(-player.speed * Time.fixedDeltaTime, 0);
 
-        if(transform.position.x < -14.17)
+        if(transform.position.x < -10.59)
         {
-            transform.position = new Vector3(14.13f, transform.position.y);
+            transform.position = new Vector3(11.90f, transform.position.y);
         }
 
     }
